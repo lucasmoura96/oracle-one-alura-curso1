@@ -14,7 +14,7 @@ Aproveitando que estou estudando HTML no meu curso superior, personalizei o prog
 
 Resultado:
 
-![image](https://user-images.githubusercontent.com/128440501/230451730-8ed207c2-d62e-42f1-af38-14444f8db1b5.png)
+![image](https://user-images.githubusercontent.com/128440501/230461485-b4c4185c-8ec5-4908-ab5b-98bedfc1052d.png)
 
 
 
