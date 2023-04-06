@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+    document.write("<br>");
+}
+
+function mostra (x) {
+    document.write(x);
+    pulaLinha();
+ }
+
+var anoAtual = 2023;
+var anosPassados = (anoAtual - 1500);
+var geracoes = (anosPassados / 28);
+    
+mostra("Desde 1500, estimasse que o Brasil passou por " + Math.round(geracoes) + " gerações até o presente momento.")
+
+</script>    

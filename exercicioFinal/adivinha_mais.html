@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>JOGO ADIVINHA</title>    
+    <style type="text/css">
+        body{
+            background-image: url("https://app.aluracursos.com/form-one/assets/images/logo-corner.png"); background-repeat: no-repeat;
+        }
+        .estilofonte{
+            font-family: Verdana;
+            font-size: 20pt;
+        }
+        .estilocores{
+            color:black;            
+        }
+        .estilofontetitulo{
+            font-family: Verdana;
+            font-size: 80pt;
+        }
+        .estilomargem{
+            margin: 15px 15px;         
+            padding: 15px 15px;               
+        }
+            
+    </style>
+</head>
+<body>
+    <div align="center">          
+<br>
+    <p class="estilocores estilofontetitulo"> JOGO ADVINHA <br></p>
+<br>    
+    <p class="estilocores estilofonte">EU ESCOLHI UM NÚMERO DE 1 A 10, SERÁ QUE VOCÊ CONSEGUE ADIVINHAR QUAL?</p>    
+
+    <p class="estilomargem"><input/>
+    <button>Chute!</button></p>
+</div>
+
+<script> 
+    
+    function sorteia() {
+        return Math.round(Math.random() * 10);
+    }
+
+    function sorteiaNumeros(quantidade) {
+        var segredos = [];
+        var numero = 1;
+        while (numero <= quantidade) {
+
+            var numeroAleatorio = sorteia();
+
+            if (numeroAleatorio !== 0) {
+                var achou = false;
+
+                for (var posicao = 0; posicao < segredos.length; posicao++) {
+                    if (segredos[posicao] == numeroAleatorio) {
+                        achou = true;
+                        break;
+                    }
+                }
+                if (achou == false) {
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                }    
+            }  
+        }
+        return segredos;
+    }
+
+    var segredos = sorteiaNumeros(4);
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+        
+        var achou = false;
+
+        for (var posicao = 0; posicao < segredos.length; posicao++) {
+
+            if(input.value == segredos[posicao]) {
+                alert("Você ACERTOU!");
+                achou = true;
+                break;
+            }   
+        }
+        
+        if (achou == false) {
+            alert("Você ERROU!!!!!!!");
+        }
+       
+        input.value = "";
+        input.focus();
+    }
+    
+    var button = document.querySelector("button");
+    button.onclick = verifica;
+
+ </script>
+
+</body>
+</html>
